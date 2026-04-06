@@ -18,6 +18,11 @@ app.get('/add/:a/:b', (req, res) => {
   res.json({ result: a + b });
 });
 
+// Add this new route in index.js
+app.get('/goodbye', (req, res) => {
+    res.json({ message: 'Goodbye! See you next time.' });
+});
+
 // Start server only when run directly (not during tests)
 if (require.main === module) {
   const PORT = process.env.PORT || 3000;

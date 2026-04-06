@@ -18,3 +18,10 @@ test('GET /add/3/4 returns 7', async () => {
   expect(response.status).toBe(200);
   expect(response.body.result).toBe(7);
 });
+
+// Add this new test in index.test.js
+test('GET /goodbye returns goodbye message', async () => {
+    const response = await request(app).get('/goodbye');
+    expect(response.status).toBe(200);
+    expect(response.body.message).toBe('Goodbye! See you next time.');
+  });
